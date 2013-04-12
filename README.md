@@ -1,7 +1,7 @@
-# Styx
+# Styx[![Build Status](https://travis-ci.org/onthebeach/styx.png)](http://travis-ci.org/onthebeach/styx) [![Code Climate](https://codeclimate.com/github/onthebeach/styx.png)](https://codeclimate.com/github/onthebeach/styx)
 
 Easily and selectively do interesting things with the river of data that is your
-MongoDB oplog
+MongoDB oplog.
 
 ## Installation
 
@@ -13,13 +13,11 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install styx
+Styx is not currently available on rubygems due to some unfortunate name clashing
 
 ## Usage
 
-    # create a mongo connection
+    # create a mongo connection (must be a Replica Set)
     connection = Styx::Connection.new('localhost:27017')
 
     # pass the connection to the river
@@ -40,12 +38,10 @@ Or install it yourself as:
     river.watch
 
 The river creates a tailable cursor on the opslogs, and passes a new entry object to
-any registered observers
+any registered observers.
 
-## Contributing
+Inspired by [Stripe's Mongoriver](https://github.com/stripe/mongoriver)
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+### Copyright
+
+Copyright (c) 2013 OnTheBeach Ltd. See LICENSE.txt for further details.
